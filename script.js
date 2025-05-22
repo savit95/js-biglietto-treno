@@ -1,30 +1,26 @@
 
 
-// prompt per inserimento chilometri, + converte in numero
-let kilometers = +prompt("Inserisci il numero di km che vuoi percorrere:");
+
+let kilometers = parseFloat(prompt("Inserisci numero di KM che vuoi percorrere:"));
 console.log(kilometers);
-// prompt per inserimento eta del passeggero, + converte in numero
-let age = +prompt("Inserisci l'eta del passeggero:");
+
+let age = parseFloat(prompt("Inserisci l'etá del passeggero:"));
 console.log(age);
 
-let price
-let reduction
-let lastprice
-
-price= 0.21 * kilometers;
-console.log(price);
+let price= 0.21 * kilometers;
+let reduction;
 
 if(age < 18){
     reduction=20 * price/100;
-    lastprice=price - reduction;
-    alert(`Il prezzo del biglietto é:${lastprice}`)
-    
+    price -= reduction;
 }else if(age >= 65){
     reduction=40 * price/100;
-    lastprice=price - reduction;
-    alert(`Il prezzo del biglietto é:${lastprice}`)
+    price -= reduction;
 }
 
-alert(`Il prezzo del biglietto é:${price}`)
+alert(`Il prezzo del biglietto é:${price.toFixed(2)}€`);
+
+
+
 
 
